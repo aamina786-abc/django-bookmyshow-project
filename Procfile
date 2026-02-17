@@ -1,1 +1,1 @@
-web: gunicorn bookmyseat.wsgi
+web: gunicorn bookmyshow.wsgi
