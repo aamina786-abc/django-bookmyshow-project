@@ -1,0 +1,11 @@
+{% extends "users/basic.html" %}
+
+{% block content %}
+<h2>Payment Cancelled ❌</h2>
+
+<p>Your seats have been released.</p>
+
+<a href="{% url 'movie_list' %}">Go Back To Movies</a>
+
+<a href="/">Try Again</a>
+{% endblock %}
