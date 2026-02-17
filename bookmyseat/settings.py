@@ -11,8 +11,6 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
-#DEBUG = os.getenv("DEBUG", "False") == "True"
-#ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
 # Apps
 INSTALLED_APPS = [
@@ -69,8 +67,7 @@ DATABASES = {
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # Stripe keys
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
