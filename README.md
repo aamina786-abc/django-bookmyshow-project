@@ -9,13 +9,13 @@ This project simulates real-world movie ticket booking platforms and demonstrate
 ✅ User Features
 🎥 Movie Browsing
 
-View available movies
+View available movies.
 
 View movie details including:
 
-Movie description
+Movie description.
 
-Cast information
+Cast information.
 
 Ratings
 
@@ -25,67 +25,67 @@ Trailer videos
 
 Users can filter movies based on:
 
-Genre (Action, Comedy, Drama, Horror)
+Genre (Action, Comedy, Drama, Horror).
 
-Language (Hindi, English, Tamil, Telugu)
+Language (Hindi, English, Tamil, Telugu).
 
 This improves search efficiency and user experience.
 
 🎟 Seat Selection System
 
-Interactive seat selection
+Interactive seat selection.
 
-Shows available and booked seats
+Shows available and booked seats.
 
-Prevents double booking
+Prevents double booking.
 
 ⏳ Seat Reservation Timeout
 
-Seats are temporarily reserved for 5 minutes
+Seats are temporarily reserved for 5 minutes.
 
-Automatically released if payment is not completed
+Automatically released if payment is not completed.
 
-Prevents seat blocking and improves fairness
+Prevents seat blocking and improves fairness.
 
-💳 Online Payment Integration
+💳 Online Payment Integration:(using stripe in test mode)
 
-Secure payment processing
+Secure payment processing.
 
-Supports card payments
+Supports card payments.
 
-Payment success and cancellation handling
+Payment success and cancellation handling.
 
-Booking confirmation only after successful payment
+Booking confirmation only after successful payment.
 
 📧 Email Ticket Confirmation
 
 After successful booking:
 
-User receives email confirmation
+User receives email confirmation.
 
 Email contains:
 
-Movie Name
+Movie Name.
 
-Theater Name
+Theater Name.
 
-Seat Numbers
+Seat Numbers.
 
-Show Timing
+Show Timing.
 
 ▶ Movie Trailer Integration
 
-Embedded YouTube trailers
+YouTube trailers Link.
 
-Helps users decide before booking
+Helps users decide before booking.
 
 ✅ Admin Features
 📊 Admin Analytics Dashboard
 
 Admin can monitor:
 
-Total Revenue Generated
+Total Revenue Generated.
 
-Most Popular Movies
+Most Popular Movies.
 
-Busiest Theaters
+Busiest Theaters.
