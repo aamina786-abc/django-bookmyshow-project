@@ -201,7 +201,7 @@ LOGIN_URL = '/users/login/'
 # -------------------------
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "dev-secret-key")
 DEBUG = os.getenv("DEBUG", "False") == "True"
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 # DEBUG = True
 # ALLOWED_HOSTS = ['*']
 
