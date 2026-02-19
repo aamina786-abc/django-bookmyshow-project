@@ -314,31 +314,29 @@ def create_checkout_session(request, theater_id):
     if not selected_seats:
         return redirect('book_seats', theater_id=theater.id)
     
-    try:
-        session = stripe.checkout.Session.create(
-            payment_method_types=['card'],
-            line_items=[{
-                'price_data': {
-                    'currency': 'inr',
-                    'product_data': {
-                        'name': theater.movie.name,
-                    },
-                    'unit_amount': int(theater.price * 100),
+    session = stripe.checkout.Session.create(
+        payment_method_types=['card'],
+        line_items=[{
+            'price_data': {
+                'currency': 'inr',
+                'product_data': {
+                    'name': theater.movie.name,
                 },
-                'quantity': len(selected_seats), 
-            }],
-            mode='payment',
-            success_url=request.build_absolute_uri(
-                reverse('payment_success', args=[theater.id])
-            ),
-            cancel_url=request.build_absolute_uri(
-                reverse('payment_cancel')
-            ),
-        )
+                'unit_amount': int(theater.price * 100),
+            },
+            'quantity': len(selected_seats), 
+        }],
+        mode='payment',
+        success_url=request.build_absolute_uri(
+            reverse('payment_success', args=[theater.id])
+        ),
+        cancel_url=request.build_absolute_uri(
+            reverse('payment_cancel')
+        ),
+    )
 
-        return redirect(session.url, code=303)
-    except Exception as e:
-        return HttpResponse(f"Stripe Error: {str(e)}")
+    return redirect(session.url, code=303)
+
 
 # ==============================
 # PAYMENT SUCCESS → BOOKING + EMAIL
