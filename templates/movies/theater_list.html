@@ -178,10 +178,13 @@
 
 
 
-            <a href="{% url 'checkout' theater.id %}" class="btn btn-success">
+            <!-- <a href="{% url 'checkout' theater.id %}" class="btn btn-success">
               <span>Pay & Book Ticket</span>
-            </a>
+            </a> -->
 
+            <a href="{% url 'book_seats' theater.id %}" class="btn btn-success">
+              <span>Select Seats & Pay</span>
+            </a>
 
             
           </div>

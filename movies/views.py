@@ -240,7 +240,7 @@ def book_seats(request, theater_id):
 
     release_expired_seats() 
     theater = get_object_or_404(Theater, id=theater_id)
-    seats = Seat.objects.filter(theater=theater)
+    seats = Seat.objects.filter(theater=theater).order_by('seat_number')
 
     if request.method == 'POST':
         selected_seats = request.POST.getlist('seats')

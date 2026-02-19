@@ -200,19 +200,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Secrets & Debug
 # -------------------------
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
-DEBUG = os.getenv("DEBUG", "False") == "True"
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+# DEBUG = os.getenv("DEBUG", "False") == "True"
+# ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
 
 
-ALLOWED_HOSTS = [
-    'django-bookmyshow-project-9.onrender.com',
-    os.environ.get('RENDER_EXTERNAL_HOSTNAME', ''),  # optional
-]
+# ALLOWED_HOSTS = [
+#     'django-bookmyshow-project-9.onrender.com',
+#     os.environ.get('RENDER_EXTERNAL_HOSTNAME', ''),  # optional
+# ]
 
-ALLOWED_HOSTS = ['django-bookmyshow-project-9.onrender.com', 'localhost', '127.0.0.1']
+# ALLOWED_HOSTS = ['django-bookmyshow-project-9.onrender.com', 'localhost', '127.0.0.1']
 
-CSRF_TRUSTED_ORIGINS = ['https://django-bookmyshow-project-9.onrender.com']
+# CSRF_TRUSTED_ORIGINS = ['https://django-bookmyshow-project-9.onrender.com']
 # -------------------------
 # Apps
 # -------------------------
@@ -276,12 +278,33 @@ WSGI_APPLICATION = 'bookmyseat.wsgi.application'
 
 
 import dj_database_url
+
 # import os
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.getenv('DB_NAME'),
+#         'USER': os.getenv('DB_USER'),
+#         'PASSWORD': os.getenv('DB_PASSWORD'),
+#         'HOST': os.getenv('DB_HOST'),
+#         'PORT': os.getenv('DB_PORT', '5432'),
+#     }
+# }
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.environ.get('DATABASE_URL'),  # Render will provide this URL
+#         conn_max_age=600,
+#         ssl_require=True
+#     )
+# }
+
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL')  # Render will provide this URL
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  # SQLite file will be created here
+    }
 }
 
 
