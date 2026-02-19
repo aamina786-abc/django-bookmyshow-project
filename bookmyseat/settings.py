@@ -201,14 +201,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # -------------------------
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "False") == "True"
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS")
-
-# If the env variable is set, split by comma; else, use an empty list
-if ALLOWED_HOSTS:
-    ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS.split(",")]
-else:
-    ALLOWED_HOSTS = []
 
 # -------------------------
 # Apps
