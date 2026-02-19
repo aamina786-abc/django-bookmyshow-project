@@ -210,6 +210,8 @@ ALLOWED_HOSTS = [
     os.environ.get('RENDER_EXTERNAL_HOSTNAME', ''),  # optional
 ]
 
+ALLOWED_HOSTS = ['django-bookmyshow-project-9.onrender.com', 'localhost', '127.0.0.1']
+
 CSRF_TRUSTED_ORIGINS = ['https://django-bookmyshow-project-9.onrender.com']
 # -------------------------
 # Apps
@@ -265,11 +267,31 @@ WSGI_APPLICATION = 'bookmyseat.wsgi.application'
 # -------------------------
 # Database (SQLite for now)
 # -------------------------
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
+# import dj_database_url
+# import os
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.environ.get('DATABASE_URL')  # Render will provide this URL
+#     )
+# }
+
+
+import dj_database_url
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    "default": dj_database_url.config(
+        default=f"sqlite:///{os.path.join(BASE_DIR, 'db.sqlite3')}"
+    )
 }
 
 
